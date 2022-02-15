@@ -15,19 +15,28 @@ import random
 
 #########################################################
 #Variables globales :
+WIDTH, HEIGHT = 500, 500
 
 
 #########################################################
 #Fonctions :
+def configuration_courante() :
+    pass
 
 
 #########################################################
 #Widgets :
-
+racine = tk.Tk()
+racine.title("tas de sable")
+canvas = tk.Canvas(racine, width=WIDTH, height=HEIGHT, bg='white')
+bouton_01 = tk.Button(racine, text="configuration aléatoire")
 
 #########################################################
 #Emplacements des widgets :
+canvas.grid()
+bouton_01.grid(row=1)
 
 
 #########################################################
 #le reste quoi :
+racine.mainloop()
