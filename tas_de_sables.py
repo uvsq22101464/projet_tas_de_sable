@@ -31,6 +31,8 @@ racine.title("tas de sable")
 canvas = tk.Canvas(racine, width=WIDTH, height=HEIGHT, bg='white')
 bouton_01 = tk.Button(racine, text="configuration aléatoire")
 
+canvas.create_text((250,250), text="salut", )
+
 #########################################################
 #Emplacements des widgets :
 canvas.grid()
