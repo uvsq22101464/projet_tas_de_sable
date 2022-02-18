@@ -25,25 +25,28 @@ centrageHauteur = espacementHauteur / 2
 taillePixelLargeur = WIDTH / N / N * 1.5
 taillePixelHauteur = HEIGHT / N / N * 1.5
 
+liste_couleurs = []
+
 #########################################################
 #Fonctions :
-def couleur() :
-    for i in grille :
-        for j in grille :
-          if grille[i][j] == 1 :
-              
-
-
 
 def configuration_courante() :
     for i in range(N) :
         grille.append([])
+        liste_couleurs.append([])
         for j in range(N):
-            grille[i].append(random.randint(0,1))
-    for x in range(N) :
-        for y in range(N) :
-            canvas.create_rectangle(espacementLargeur * x + centrageLargeur, espacementHauteur * y + centrageHauteur, \
-                espacementLargeur * x + centrageLargeur + taillePixelLargeur, espacementHauteur * y + centrageHauteur + taillePixelHauteur, fill="white")
+            grille[i].append(random.randint(1,5))
+            if grille[i][j] == 1 :    
+                liste_couleurs[i].append("blue")
+            elif grille[i][j] == 2 :
+                liste_couleurs[i].append("yellow")
+            elif grille[i][j] == 3 :
+                liste_couleurs[i].append("green")
+            else :
+                liste_couleurs[i].append("red")
+            couleur = liste_couleurs[i][j]
+            canvas.create_rectangle(espacementLargeur * i + centrageLargeur, espacementHauteur * j + centrageHauteur, \
+                espacementLargeur * i + centrageLargeur + taillePixelLargeur, espacementHauteur * j + centrageHauteur + taillePixelHauteur, fill=couleur)
     print(grille)
 #création de la grille
 
