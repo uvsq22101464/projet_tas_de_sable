@@ -15,9 +15,15 @@ import random
 
 #########################################################
 #Variables globales :
-WIDTH, HEIGHT = 500, 500
-N = 3
+WIDTH, HEIGHT = 600, 600
+N = 10
 grille = []
+espacementHauteur = HEIGHT / N
+espacementLargeur = WIDTH / N
+centrageLargeur = espacementLargeur / 2
+centrageHauteur = espacementHauteur / 2
+taillePixelLargeur = WIDTH / N / N * 1.5
+taillePixelHauteur = HEIGHT / N / N * 1.5
 
 #########################################################
 #Fonctions :
@@ -26,6 +32,10 @@ def configuration_courante() :
         grille.append([])
         for j in range(N):
             grille[i].append(random.randint(0,10))
+    for x in range(N) :
+        for y in range(N) :
+            canvas.create_rectangle(espacementLargeur * x + centrageLargeur, espacementHauteur * y + centrageHauteur, \
+                espacementLargeur * x + centrageLargeur + taillePixelLargeur, espacementHauteur * y + centrageHauteur + taillePixelHauteur, fill="white")
     print(grille)
 #création de la grille
 
