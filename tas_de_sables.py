@@ -27,11 +27,19 @@ taillePixelHauteur = HEIGHT / N / N * 1.5
 
 #########################################################
 #Fonctions :
+def couleur() :
+    for i in grille :
+        for j in grille :
+          if grille[i][j] == 1 :
+              
+
+
+
 def configuration_courante() :
     for i in range(N) :
         grille.append([])
         for j in range(N):
-            grille[i].append(random.randint(0,10))
+            grille[i].append(random.randint(0,1))
     for x in range(N) :
         for y in range(N) :
             canvas.create_rectangle(espacementLargeur * x + centrageLargeur, espacementHauteur * y + centrageHauteur, \
